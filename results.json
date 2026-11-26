@@ -1,0 +1,10 @@
+{
+  "train_images": 1347,
+  "test_images": 450,
+  "test_accuracy": {
+    "Logistic Regression": 0.9778,
+    "SVM (RBF kernel)": 0.98,
+    "Neural network (MLP, 2 hidden layers)": 0.9733
+  },
+  "best_model": "SVM (RBF kernel)"
+}
