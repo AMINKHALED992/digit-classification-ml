@@ -18,7 +18,7 @@ UCI "Optical Recognition of Handwritten Digits", bundled with scikit-learn: 1,79
 | SVM (RBF kernel) | **98.00%** |
 | Neural network (MLP) | 97.33% |
 
-Weakest class for the best model: digit 8 (recall 0.93). See `confusion_matrix.png` and `sample_predictions.png`.
+Weakest class for the best model: digit 8 (recall 0.93). See the figures below (also saved as PNG when you run the script).
 
 ## How to run
 ```bash
@@ -29,3 +29,8 @@ Tested with Python 3, scikit-learn 1.7.2, numpy 2.2.6, matplotlib 3.10.9.
 
 ## Limits
 The images are tiny (8x8) and clean, so high accuracy is expected. This is a learning project, not a production OCR system. A next step would be a CNN on MNIST (28x28).
+
+## Figures
+![Confusion matrix](confusion_matrix.svg)
+
+![Sample predictions](sample_predictions.svg)
