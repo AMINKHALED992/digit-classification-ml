@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+matplotlib.rcParams["svg.fonttype"] = "none"
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -50,7 +51,7 @@ with open("results.json", "w") as f:
 fig, ax = plt.subplots(figsize=(7, 6))
 ConfusionMatrixDisplay.from_predictions(y_test, preds[best], ax=ax, cmap="Blues", colorbar=False)
 ax.set_title(f"Confusion matrix: {best}")
-fig.tight_layout(); fig.savefig("confusion_matrix.png", dpi=120)
+fig.tight_layout(); fig.savefig("confusion_matrix.png", dpi=120); fig.savefig("confusion_matrix.svg")
 
 idx = np.random.RandomState(SEED).choice(len(X_test), 16, replace=False)
 fig, axes = plt.subplots(4, 4, figsize=(6, 6))
@@ -59,4 +60,4 @@ for a, i in zip(axes.ravel(), idx):
     ok = preds[best][i] == y_test[i]
     a.set_title(f"pred {preds[best][i]} / true {y_test[i]}", color="green" if ok else "red", fontsize=8)
     a.axis("off")
-fig.tight_layout(); fig.savefig("sample_predictions.png", dpi=120)
+fig.tight_layout(); fig.savefig("sample_predictions.png", dpi=120); fig.savefig("sample_predictions.svg")
